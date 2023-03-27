@@ -1,8 +1,18 @@
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import { saveAs } from 'file-saver';
 import style from './style.module.scss';
 
 export default function ImageListItem({ img }) {
+
+  async function downloadImage() {
+    const resp = await fetch(img.download_url);
+    const blob = await resp.blob();
+    saveAs(blob, img.author + "_" + img.id);
+
+  }
+
+
   return (
     <div className={style.card}>
       <a href={img.url}>
@@ -19,6 +29,7 @@ export default function ImageListItem({ img }) {
         <Button
           type="primary"
           icon={<DownloadOutlined />}
+          onClick={downloadImage}
           className={style.btn}
         >
           Télécharger
