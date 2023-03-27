@@ -2,11 +2,14 @@
 import { useState } from 'react';
 import style from './App.module.scss';
 import ImageList from './components/ImageList/ImageList';
+import useScrollPosition from './hooks/useScrollPosition';
 
 function App() {
 
   const [imageList, setImageList] = useState(DATA);
+  const  { isBottom } = useScrollPosition();
 
+  console.log("***", isBottom);
   return (
     <div className={style.root}>
       <h1>Banque d'images</h1>
