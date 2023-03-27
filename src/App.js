@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import style from './App.module.scss';
+import ImageList from './components/ImageList/ImageList';
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
   return (
     <div className={style.root}>
       <h1>Banque d'images</h1>
-      <h2>Télécharge des images open sources alétaoires</h2>
+      <h2 className={style.subtitle}>Télécharge des images open sources aléatoires</h2>
+      <ImageList imgList={imageList}/>
     </div>
   );
 }
