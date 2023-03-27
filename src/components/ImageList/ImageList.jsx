@@ -6,7 +6,7 @@ export default function ImageList({ imgList }) {
     <div>
       {imgList.map(img => {
         return (
-          <div key={img.id}>
+          <div key={img.id} className={style.card_item}>
             <ImageListItem img={img} />
           </div>
         );
