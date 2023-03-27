@@ -1,3 +1,5 @@
+import { DownloadOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 import style from './style.module.scss';
 
 export default function ImageListItem({ img }) {
@@ -14,7 +16,13 @@ export default function ImageListItem({ img }) {
             Taille original : {img.height} x {img.width}
           </div>
         </div>
-        <button className={style.button}>Télécharger</button>
+        <Button
+          type="primary"
+          icon={<DownloadOutlined />}
+          className={style.btn}
+        >
+          Télécharger
+        </Button>
       </div>
     </div>
   )

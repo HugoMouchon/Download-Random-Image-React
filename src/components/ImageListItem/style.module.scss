@@ -12,7 +12,8 @@
 
 .card_banner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     gap: 2em;
     padding: 1em;
 }
@@ -37,6 +38,7 @@
 .card_text{
     text-align: left;
 }
-.button {
-    
+.btn {
+    display: flex;
+    align-items: center;
 }
